@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="org/jdmp/bsh/|org/jdmp/ehcache/|org/jdmp/jgroups/|org/jdmp/lucene/|org/jdmp/weka/" kind="src" path="src"/>
+	<classpathentry kind="src" path="tutorial/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/ujmp-complete-0.2.2.jar" sourcepath="D:/Code/workspace/JDMP/lib/ujmp-complete-0.2.2-sources.jar"/>
+	<classpathentry kind="lib" path="lib/mallet.jar"/>
+	<classpathentry kind="lib" path="lib/libsvm.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
