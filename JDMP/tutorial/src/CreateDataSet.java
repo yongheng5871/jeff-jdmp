@@ -1,8 +1,8 @@
 import java.io.IOException;
 
 import org.jdmp.core.dataset.ClassificationDataSet;
+import org.jdmp.core.dataset.DataSet;
 import org.jdmp.core.dataset.DataSetFactory;
-import org.jdmp.core.sample.Sample;
 import org.ujmp.core.Matrix;
 import org.ujmp.core.MatrixFactory;
 import org.ujmp.core.calculation.Calculation.Ret;
@@ -11,7 +11,7 @@ import org.ujmp.core.exceptions.MatrixException;
 
 public class CreateDataSet {
 
-	public static void main(String[] args) throws MatrixException, IOException {
+	static DataSet createDataSet() throws MatrixException, IOException {
 
 		Matrix data = MatrixFactory.importFromFile(FileFormat.CSV,
 				"data/iris.data");
@@ -23,13 +23,13 @@ public class CreateDataSet {
 
 		ClassificationDataSet ds = DataSetFactory.copyFromMatrix(features,
 				targets);
+		return ds;
+	}
 
-		for (Sample sample : ds.getSamples()) {
-			String featureString = TutorialUtil.removeCarriage(sample
-					.getMatrix(Sample.INPUT).stringValue());
-			String targetString = TutorialUtil.removeCarriage(sample.getMatrix(
-					Sample.TARGET).stringValue());
-			System.out.println(featureString + "\t" + targetString);
-		}
+	public static void main(String[] args) throws MatrixException, IOException {
+
+		DataSet ds = createDataSet();
+		TutorialUtil.printDataSet(ds);
+
 	}
 }
